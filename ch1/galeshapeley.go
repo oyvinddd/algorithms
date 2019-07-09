@@ -11,30 +11,36 @@ type Person struct {
 
 // GS - Gale-Shapeley algorithm
 // TOOD: need to test if the algorithm is actually correct
+// It's wrong. We cannot assume the first element in Priority list of w is part of 'prefers'
 func GS(men []Person, women []Person) {
 	engagedCount, counter := 0, 0
 	for engagedCount < len(men) {
 		m := &men[counter]
 		if m.isFree() && len(m.Priority) > 0 {
 			w := m.pop()
+			fmt.Printf("Popping %s for %s!\n", w.Name, m.Name)
 			// w is free, get engaged
 			if w.isFree() {
 				engagement(m, w)
 				engagedCount++
-				fmt.Printf("%s is engaged to %s\n", m.Name, w.Name)
+				fmt.Printf("#1 %s is engaged to %s (%d)\n", m.Name, w.Name, len(m.Priority))
 			} else {
 				if w.prefers(m) {
 					engagement(m, w)
-					fmt.Printf("%s is engaged to %s\n", m.Name, w.Name)
+					fmt.Printf("#2 %s is engaged to (%s)\n", m.Name, w.Name)
 				}
 			}
 		}
 		counter++
+		// reset counter if it exceeds number of people
+		if counter > len(men)-1 {
+			counter = 0
+		}
 	}
 	printPairs(men)
 }
 
-func (p Person) pop() *Person {
+func (p *Person) pop() *Person {
 	if len(p.Priority) == 0 {
 		return nil
 	}
@@ -43,11 +49,11 @@ func (p Person) pop() *Person {
 	return person
 }
 
-func (p Person) isFree() bool {
+func (p *Person) isFree() bool {
 	return p.EngagedTo == nil
 }
 
-func (p Person) prefers(p2 *Person) bool {
+func (p *Person) prefers(p2 *Person) bool {
 	if len(p.Priority) == 0 {
 		return false
 	}

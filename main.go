@@ -1,5 +1,38 @@
 package main
 
+import "bitbucket.com/oyvind_hauge/inf234/ch1"
+
 func main() {
 
+	m1 := ch1.Person{
+		Name:      "Øyvind",
+		EngagedTo: nil,
+		Priority:  []*ch1.Person{},
+	}
+	m2 := ch1.Person{
+		Name:      "Robert",
+		EngagedTo: nil,
+		Priority:  []*ch1.Person{},
+	}
+	w1 := ch1.Person{
+		Name:      "Marie",
+		EngagedTo: nil,
+		Priority:  []*ch1.Person{},
+	}
+	w2 := ch1.Person{
+		Name:      "Silje",
+		EngagedTo: nil,
+		Priority:  []*ch1.Person{},
+	}
+
+	// populate priority lists for all people
+	m1.Priority = []*ch1.Person{&w2, &w1}
+	m2.Priority = []*ch1.Person{&w1, &w2}
+	w1.Priority = []*ch1.Person{&m1, &m2}
+	w2.Priority = []*ch1.Person{&m2, &m1}
+
+	men := []ch1.Person{m1, m2}
+	women := []ch1.Person{w1, w2}
+
+	ch1.GS(men, women)
 }

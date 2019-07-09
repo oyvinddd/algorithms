@@ -56,6 +56,7 @@ func (p *Person) isFree() bool {
 func (p *Person) prefers(p2 *Person) bool {
 	ci, ni := 0, 0
 	for i, person := range p.Priority {
+		// fmt.Printf("%p == %p is %t \n", p2, person, p2 == person)
 		if p.EngagedTo.Name == person.Name {
 			ci = i
 		}

@@ -27,7 +27,7 @@ func GS(men []Person, women []Person) {
 			} else {
 				if w.prefers(m) {
 					engagement(m, w)
-					fmt.Printf("#2 %s is engaged to (%s)\n", m.Name, w.Name)
+					fmt.Printf("#2 %s is engaged to %s\n", m.Name, w.Name)
 				}
 			}
 		}
@@ -54,10 +54,19 @@ func (p *Person) isFree() bool {
 }
 
 func (p *Person) prefers(p2 *Person) bool {
-	if len(p.Priority) == 0 {
-		return false
+	ci, ni := 0, 0
+	for i, person := range p.Priority {
+		if p.EngagedTo.Name == person.Name {
+			ci = i
+		}
+		if p2.Name == person.Name {
+			ni = i
+		}
 	}
-	return p.Priority[0] == p2
+	if ni < ci {
+		return true
+	}
+	return false
 }
 
 func engagement(m *Person, w *Person) {

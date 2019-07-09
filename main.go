@@ -36,12 +36,12 @@ func main() {
 	}
 
 	// populate priority lists for all people
-	m1.Priority = []*ch1.Person{&w2, &w1, &w3}
-	m2.Priority = []*ch1.Person{&w1, &w2, &w3}
-	m3.Priority = []*ch1.Person{&w2, &w3, &w1}
+	m1.Priority = []*ch1.Person{&w1, &w2, &w3}
+	m2.Priority = []*ch1.Person{&w3, &w2, &w1}
+	m3.Priority = []*ch1.Person{&w3, &w1, &w2}
 	w1.Priority = []*ch1.Person{&m1, &m2, &m3}
-	w2.Priority = []*ch1.Person{&m2, &m3, &m1}
-	w3.Priority = []*ch1.Person{&m3, &m2, &m1}
+	w2.Priority = []*ch1.Person{&m3, &m2, &m1}
+	w3.Priority = []*ch1.Person{&m2, &m3, &m1}
 
 	men := []ch1.Person{m1, m2, m3}
 	women := []ch1.Person{w1, w2, w3}

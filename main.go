@@ -4,47 +4,60 @@ import "bitbucket.com/oyvind_hauge/inf234/ch1"
 
 func main() {
 
-	m1 := &ch1.Person{
-		Name:      "m1",
+	ryan := &ch1.Person{
+		Name:      "Ryan",
 		EngagedTo: nil,
 		Priority:  []*ch1.Person{},
 	}
-	m2 := &ch1.Person{
-		Name:      "m2",
+	josh := &ch1.Person{
+		Name:      "Josh",
 		EngagedTo: nil,
 		Priority:  []*ch1.Person{},
 	}
-	m3 := &ch1.Person{
-		Name:      "m3",
+	blake := &ch1.Person{
+		Name:      "Blake",
 		EngagedTo: nil,
 		Priority:  []*ch1.Person{},
 	}
-	w1 := &ch1.Person{
-		Name:      "w1",
+	connor := &ch1.Person{
+		Name:      "Connor",
 		EngagedTo: nil,
 		Priority:  []*ch1.Person{},
 	}
-	w2 := &ch1.Person{
-		Name:      "w2",
+	lizzy := &ch1.Person{
+		Name:      "Lizzy",
 		EngagedTo: nil,
 		Priority:  []*ch1.Person{},
 	}
-	w3 := &ch1.Person{
-		Name:      "w3",
+	sarah := &ch1.Person{
+		Name:      "Sarah",
+		EngagedTo: nil,
+		Priority:  []*ch1.Person{},
+	}
+	zoey := &ch1.Person{
+		Name:      "Zoey",
+		EngagedTo: nil,
+		Priority:  []*ch1.Person{},
+	}
+	daniela := &ch1.Person{
+		Name:      "Daniela",
 		EngagedTo: nil,
 		Priority:  []*ch1.Person{},
 	}
 
 	// populate priority lists for all people
-	m1.Priority = []*ch1.Person{w1, w2, w3}
-	m2.Priority = []*ch1.Person{w3, w2, w1}
-	m3.Priority = []*ch1.Person{w3, w1, w2}
-	w1.Priority = []*ch1.Person{m1, m2, m3}
-	w2.Priority = []*ch1.Person{m3, m2, m1}
-	w3.Priority = []*ch1.Person{m2, m3, m1}
+	ryan.Priority = []*ch1.Person{lizzy, sarah, zoey, daniela}
+	josh.Priority = []*ch1.Person{sarah, lizzy, daniela, zoey}
+	blake.Priority = []*ch1.Person{sarah, daniela, zoey, lizzy}
+	connor.Priority = []*ch1.Person{lizzy, sarah, zoey, daniela}
 
-	men := []ch1.Person{*m1, *m2, *m3}
-	women := []ch1.Person{*w1, *w2, *w3}
+	lizzy.Priority = []*ch1.Person{ryan, blake, josh, connor}
+	sarah.Priority = []*ch1.Person{ryan, blake, connor, josh}
+	zoey.Priority = []*ch1.Person{connor, josh, ryan, blake}
+	daniela.Priority = []*ch1.Person{ryan, josh, connor, blake}
+
+	men := []ch1.Person{*ryan, *josh, *blake, *connor}
+	women := []ch1.Person{*lizzy, *sarah, *zoey, *daniela}
 
 	ch1.GS(men, women)
 }

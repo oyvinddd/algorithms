@@ -10,24 +10,19 @@ type Person struct {
 }
 
 // GS - Gale-Shapeley algorithm
-// TOOD: need to test if the algorithm is actually correct
-// It's wrong. We cannot assume the first element in Priority list of w is part of 'prefers'
 func GS(men []Person, women []Person) {
 	engagedCount, counter := 0, 0
 	for engagedCount < len(men) {
 		m := &men[counter]
 		if m.isFree() && len(m.Priority) > 0 {
 			w := m.pop()
-			fmt.Printf("Popping %s for %s!\n", w.Name, m.Name)
-			// w is free, get engaged
+			// w is free, get engaged directly
 			if w.isFree() {
 				engagement(m, w)
 				engagedCount++
-				fmt.Printf("#1 %s is engaged to %s (%d)\n", m.Name, w.Name, len(m.Priority))
 			} else {
 				if w.prefers(m) {
 					engagement(m, w)
-					fmt.Printf("#2 %s is engaged to %s\n", m.Name, w.Name)
 				}
 			}
 		}
@@ -56,7 +51,8 @@ func (p *Person) isFree() bool {
 func (p *Person) prefers(p2 *Person) bool {
 	ci, ni := 0, 0
 	for i, person := range p.Priority {
-		// fmt.Printf("%p == %p is %t \n", p2, person, p2 == person)
+		// we're comparing strings instead of actual memory addresses since priority
+		// list of men on the women has different addresses than the actual men (they were copied at some point, I guess)
 		if p.EngagedTo.Name == person.Name {
 			ci = i
 		}
@@ -64,10 +60,7 @@ func (p *Person) prefers(p2 *Person) bool {
 			ni = i
 		}
 	}
-	if ni < ci {
-		return true
-	}
-	return false
+	return ni < ci
 }
 
 func engagement(m *Person, w *Person) {
@@ -80,7 +73,9 @@ func engagement(m *Person, w *Person) {
 }
 
 func printPairs(people []Person) {
+	fmt.Println("########## RESULTS ##########")
 	for _, person := range people {
 		fmt.Printf("%s is married to %s\n", person.Name, person.EngagedTo.Name)
 	}
+	fmt.Println("#############################")
 }

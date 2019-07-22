@@ -53,6 +53,7 @@ func (p *Person) prefers(p2 *Person) bool {
 	for i, person := range p.Priority {
 		// we're comparing strings instead of actual memory addresses since priority
 		// list of men on the women has different addresses than the actual men (they were copied at some point, I guess)
+		// ALSO, this could be optimised by having an NxN matrix with the womens preferences instead of a list on each woman
 		if p.EngagedTo.Name == person.Name {
 			ci = i
 		}

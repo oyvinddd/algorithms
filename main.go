@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	sorting "bitbucket.com/oyvind_hauge/inf234/algorithms/sorting"
+	"bitbucket.com/oyvind_hauge/inf234/algorithms/sorting"
 )
 
 func main() {

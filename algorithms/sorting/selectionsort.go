@@ -1,19 +1,17 @@
 package sorting
 
 // SelectionSort ...
-func SelectionSort(a *[]int) {
-	a1 := *a
-	len := len(a1)
+func SelectionSort(a []int) {
+	len := len(a)
 	for i := 0; i < len; i++ {
 		minIdx := i
 		for j := i + 1; j < len; j++ {
-			if a1[j] < a1[minIdx] {
+			if a[j] < a[minIdx] {
 				minIdx = j
 			}
 		}
-		swap(a1, i, minIdx)
+		swap(a, i, minIdx)
 	}
-	a = &a1
 }
 
 func swap(arr []int, indexA int, indexB int) {

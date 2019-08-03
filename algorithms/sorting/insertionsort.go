@@ -5,7 +5,7 @@ package sorting
 func InsertionSort(a []int) {
 	len := len(a)
 	for i := 1; i < len; i++ {
-		for j := i; j > 0 && a[j] < a[j-1]; j-- {
+		for j := i; j > 0 && a[j] < a[j-1]; j-- { // the conditional here makes this algo faster than selection sort for partially sorted arrays
 			exchange(a, j, j-1)
 		}
 	}

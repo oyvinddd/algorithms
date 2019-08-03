@@ -1,6 +1,6 @@
 package sorting
 
-// SelectionSort ...
+// SelectionSort - elementary sort
 func SelectionSort(a []int) {
 	len := len(a)
 	for i := 0; i < len; i++ {

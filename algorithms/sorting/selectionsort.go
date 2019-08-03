@@ -1,20 +1,31 @@
 package sorting
 
-// SelectionSort - elementary sort
-func SelectionSort(a []int) {
-	len := len(a)
+// SelectionSort ...
+type SelectionSort struct {
+	A []int
+}
+
+// Execute ...
+func (ss *SelectionSort) Execute() {
+	ss.sort()
+}
+
+func (ss *SelectionSort) sort() {
+	arr := ss.A
+	len := len(arr)
 	for i := 0; i < len; i++ {
 		minIdx := i
 		for j := i + 1; j < len; j++ {
-			if a[j] < a[minIdx] {
+			if arr[j] < arr[minIdx] {
 				minIdx = j
 			}
 		}
-		swap(a, i, minIdx)
+		ss.swap(i, minIdx)
 	}
 }
 
-func swap(arr []int, indexA int, indexB int) {
+func (ss *SelectionSort) swap(indexA int, indexB int) {
+	arr := ss.A
 	temp := arr[indexA]
 	arr[indexA] = arr[indexB]
 	arr[indexB] = temp

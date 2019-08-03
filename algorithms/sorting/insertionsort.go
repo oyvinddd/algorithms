@@ -1,6 +1,7 @@
 package sorting
 
 // InsertionSort - Elementary sort. Running time of insetion sort relies on the input. If it's already partially sorted, it's faster to sort than using selection sort.
+// just like selection sort, this algorithm is quadratic.
 func InsertionSort(a []int) {
 	len := len(a)
 	for i := 1; i < len; i++ {

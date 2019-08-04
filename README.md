@@ -5,11 +5,11 @@ Various algorithms implemented in Go
 ------------------------------------
 
 ### Sorting
-* Elementary sorts
+* __Elementary sorts__
     * [Linear sort](https://github.com/oyvinddd/algorithms/blob/master/sorting/linearsort/linearsort.go "Go to page")
     * [Selection sort](https://github.com/oyvinddd/algorithms/blob/master/sorting/selectionsort/selectionsort.go "Go to page")
     * [Insertion Sort](https://github.com/oyvinddd/algorithms/blob/master/sorting/insertionsort/insertionsort.go "Go to page")
-    * [Shell sort](https://github.com/oyvinddd/algorithms/blob/master/sorting/shellsort/shellsort.go "Go to page")
+    * [Shell sort](https://github.com/oyvinddd/algorithms/blob/master/sorting/shellsort/shellsort.go "Go to page")  
 * [Merge sort](https://github.com/oyvinddd/algorithms/blob/master/sorting/mergesort/mergesort.go "Go to page") (WIP)
 
 ### Searching

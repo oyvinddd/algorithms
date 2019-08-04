@@ -1,18 +1,18 @@
 package insertionsort
 
-// Sort - Elementary sort. Running time of insetion sort relies on the input. If it's already partially sorted, it's faster to sort than using selection sort.
-// just like selection sort, this algorithm is quadratic.
+/*
+Sort sorts the input slice in-place
+Running time: O(n^2), i.e. quadratic, but performs much better than selection sort in most situations
+*/
 func Sort(a []int) {
 	len := len(a)
 	for i := 1; i < len; i++ {
-		for j := i; j > 0 && a[j] < a[j-1]; j-- { // the conditional here makes this algo faster than selection sort for partially sorted arrays
+		for j := i; j > 0 && a[j] < a[j-1]; j-- {
 			exch(a, j, j-1)
 		}
 	}
 }
 
-func exch(a []int, ai int, bi int) {
-	temp := a[ai]
-	a[ai] = a[bi]
-	a[bi] = temp
+func exch(a []int, indexA int, indexB int) {
+	a[indexA], a[indexB] = a[indexB], a[indexA]
 }

@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"bitbucket.com/oyvind_hauge/inf234/algorithms/sorting/shellsort"
+	"bitbucket.com/oyvind_hauge/inf234/sorting/insertionsort"
 )
 
 func main() {
@@ -12,8 +12,8 @@ func main() {
 	a := []int{4, 7, 5, 0, 3, 2, 6, 1, 9, 8}
 
 	printSlice(a, "INPUT")
-	shellsort.Sort(a)
-	// insertion.Sort(a)
+	// shellsort.Sort(a)
+	insertionsort.Sort(a)
 	printSlice(a, "OUTPUT")
 }
 

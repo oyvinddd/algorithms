@@ -5,10 +5,12 @@ A collection of well-known algorithms implemented in Go
 -------------------------------------------------------
 
 ### Sorting
-* [Linear sort](https://github.com/oyvinddd/algorithms/blob/master/algorithms/sorting/linearsort/linearsort.go "Go to page")
-* [Insertion Sort](https://github.com/oyvinddd/algorithms/blob/master/algorithms/sorting/insertionsort/insertionsort.go)
-* [Merge sort](https://github.com/oyvinddd/algorithms/blob/master/algorithms/sorting/mergesort/mergesort.go) (WIP)
+* [Linear sort](https://github.com/oyvinddd/algorithms/blob/master/sorting/linearsort/linearsort.go "Go to page")
+* [Selection sort](https://github.com/oyvinddd/algorithms/blob/master/sorting/selectionsort/selectionsort.go "Go to page")
+* [Insertion Sort](https://github.com/oyvinddd/algorithms/blob/master/sorting/insertionsort/insertionsort.go "Go to page")
+* [Shell sort](https://github.com/oyvinddd/algorithms/blob/master/sorting/shellsort/shellsort.go "Go to page")
+* [Merge sort](https://github.com/oyvinddd/algorithms/blob/master/sorting/mergesort/mergesort.go "Go to page") (WIP)
 ### Searching
-* [Binary search](coming)
+* [Binary search](https://github.com/oyvinddd/algorithms/blob/master/searching/binarysearch.go "Go to page")
 ### Other
-* [Gale-Shapeley](https://github.com/oyvinddd/algorithms/blob/master/algorithms/other/galeshapeley/galeshapeley.go) (WIP)
+* [Gale-Shapeley](https://github.com/oyvinddd/algorithms/blob/master/other/galeshapeley/galeshapeley.go "Go to page") (WIP)

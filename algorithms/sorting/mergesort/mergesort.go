@@ -1,4 +1,4 @@
-package sorting
+package mergesort
 
 var aux []int
 

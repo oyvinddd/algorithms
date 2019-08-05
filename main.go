@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/oyvinddd/algorithms/sorting/insertionsort"
+	"github.com/oyvinddd/algorithms/sorting/mergesort"
 )
 
 func main() {
@@ -13,7 +13,8 @@ func main() {
 
 	printSlice(a, "INPUT")
 	// shellsort.Sort(a)
-	insertionsort.Sort(a)
+	// insertionsort.Sort(a)
+	mergesort.Mergesort(a)
 	printSlice(a, "OUTPUT")
 }
 

@@ -1,9 +1,8 @@
 Algorithms and Data Structures
 ==============================
 
-A collection of well-known algorithms and data structures implemented in Go(lang)
----------------------------------------------------------------------------------
-
+A collection of algorithms and data structures implemented in Go
+----------------------------------------------------------------
 
 ### Algorithms
 

@@ -4,11 +4,11 @@ package mergesort
 var aux []int
 
 /*
-Mergesort is a recursive algorithm that divides the input set
-into two equal-sized parts, sorts each half recursively, and
-then merges the two parts into a single sorted output list.
+Mergesort is a "divide and conquer" algorithm that divides the input set
+into two equal-sized parts, sorts each half recursively (by repeatedly
+dividing), and then merges the two parts into a single sorted output list.
 
-Running time: O(n log n), i.e. logarithmic
+Running time: O(n*log(n))
 */
 func Mergesort(a []int) {
 	len := len(a)

@@ -1,10 +1,14 @@
-Algorithms
-==========
+Algorithms and Data Structures
+==============================
 
-Various algorithms implemented in Go
-------------------------------------
+A collection of well-known algorithms and data structures implemented in Go(lang)
+---------------------------------------------------------------------------------
 
-### Sorting
+
+### Algorithms
+
+#### Sorting
+
 * __Elementary sorts__
     * [Linear sort](https://github.com/oyvinddd/algorithms/blob/master/sorting/linearsort/linearsort.go "Go to page")
     * [Selection sort](https://github.com/oyvinddd/algorithms/blob/master/sorting/selectionsort/selectionsort.go "Go to page")
@@ -12,8 +16,12 @@ Various algorithms implemented in Go
     * [Shell sort](https://github.com/oyvinddd/algorithms/blob/master/sorting/shellsort/shellsort.go "Go to page")  
 * [Merge sort](https://github.com/oyvinddd/algorithms/blob/master/sorting/mergesort/mergesort.go "Go to page")
 
-### Searching
+#### Searching
 * [Binary search](https://github.com/oyvinddd/algorithms/blob/master/searching/binarysearch.go "Go to page")
 
-### Other
+#### Other
 * [Gale-Shapeley](https://github.com/oyvinddd/algorithms/blob/master/other/galeshapeley/galeshapeley.go "Go to page") (WIP)
+
+### Data Structures
+
+* Priority Queue

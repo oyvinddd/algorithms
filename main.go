@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"bitbucket.com/oyvind_hauge/inf234/sorting/insertionsort"
+	"github.com/oyvinddd/algorithms/sorting/insertionsort"
 )
 
 func main() {

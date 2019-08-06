@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/oyvinddd/algorithms/sorting/mergesort"
+	"github.com/oyvinddd/algorithms/sorting/selectionsort"
 )
 
 func main() {
@@ -14,7 +14,8 @@ func main() {
 	printSlice(a, "INPUT")
 	// shellsort.Sort(a)
 	// insertionsort.Sort(a)
-	mergesort.Mergesort(a)
+	// mergesort.Mergesort(a)
+	selectionsort.Sort(a)
 	printSlice(a, "OUTPUT")
 }
 

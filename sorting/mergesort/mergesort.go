@@ -4,9 +4,10 @@ package mergesort
 var aux []int
 
 /*
-Mergesort is a "divide and conquer" algorithm that divides the input set
-into two equal-sized parts, sorts each half recursively (by repeatedly
-dividing), and then merges the two parts into a single sorted output list.
+Mergesort (top-down) is a "divide and conquer" algorithm that divides
+the input set into two equal-sized parts, sorts each half recursively
+(by repeatedly dividing), and then merges the two parts into a single
+sorted output list.
 
 Running time: O(n*log(n))
 */

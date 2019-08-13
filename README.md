@@ -9,11 +9,12 @@ A collection of algorithms and data structures implemented in Go
 #### Sorting
 
 * __Elementary sorts__
-    * [Linear sort](https://github.com/oyvinddd/algorithms/blob/master/sorting/linearsort/linearsort.go "Go to page")
+    * [~~Linear sort~~](https://github.com/oyvinddd/algorithms/blob/master/sorting/linearsort/linearsort.go "Go to page")
     * [Selection sort](https://github.com/oyvinddd/algorithms/blob/master/sorting/selectionsort/selectionsort.go "Go to page")
     * [Insertion Sort](https://github.com/oyvinddd/algorithms/blob/master/sorting/insertionsort/insertionsort.go "Go to page")
     * [Shell sort](https://github.com/oyvinddd/algorithms/blob/master/sorting/shellsort/shellsort.go "Go to page")  
 * [Mergesort](https://github.com/oyvinddd/algorithms/blob/master/sorting/mergesort/mergesort.go "Go to page")
+    * [Bottom-up mergesort](https://github.com/oyvinddd/algorithms/blob/master/sorting/mergesort/mergesortbu.go "Go to page")
 * [Quicksort](https://github.com/oyvinddd/algorithms/blob/master/sorting/quicksort/quicksort.go "Go to page")
 
 #### Searching

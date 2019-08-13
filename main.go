@@ -2,8 +2,6 @@ package main
 
 import (
 	"fmt"
-
-	"github.com/oyvinddd/algorithms/sorting/quicksort"
 )
 
 func main() {
@@ -12,11 +10,9 @@ func main() {
 	a := []int{9, 4, 7, 5, 0, 3, 2, 6, 1, 9, 8}
 
 	printSlice(a, "INPUT")
-	// shellsort.Sort(a)
-	// insertionsort.Sort(a)
-	// mergesort.Mergesort(a)
-	// selectionsort.Sort(a)
-	quicksort.Sort(a, 0, len(a)-1)
+
+	// Run code on slice here
+
 	printSlice(a, "OUTPUT")
 }
 

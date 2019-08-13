@@ -10,7 +10,7 @@ Running time: O(n*log(n))
 */
 func MergesortBU(a []int) {
 	len := len(a)
-	aux = make([]int, len)           // auxiallary array is defined in mergesort.go
+	aux = make([]int, len)           // auxiliary array is defined in mergesort.go
 	for sz := 1; sz < len; sz *= 2 { // sz: ubarray size
 		for lo := 0; lo < len-sz; lo += sz + sz { // lo: subarray index
 			merge(a, lo, lo+sz-1, min(lo+sz+sz-1, len-1)) // using merge function from mergesort.go

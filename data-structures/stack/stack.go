@@ -1,37 +1,39 @@
-// Package stack implements a basic (resizing) LIFO stack
+// Package stack implements a pushdown stack (linked-list implementation)
 package stack
 
-// Stack a custom stack type that stores string pointers
-type Stack []*string
-
-// NewStack constructor
-func NewStack() *Stack {
-	return &Stack{}
+// Stack struct
+type Stack struct {
+	first *node
+	count int
 }
 
-// Push pushes a new element onto the stack
-func (s *Stack) Push(e string) {
-	(*s) = append(*s, &e)
+type node struct {
+	item *string
+	next *node
 }
 
-// Pop reduces the size of the stack by one and returns the last element
+// Push an item onto the stack
+func (s *Stack) Push(item string) {
+	oldFirst := s.first
+	s.first = &node{item: &item}
+	s.first.next = oldFirst
+	s.count++
+}
+
+// Pop an item from the stack
 func (s *Stack) Pop() *string {
-	stack := *s
-	if len(stack) > 0 {
-		l := len(stack) - 1
-		e := stack[l]
-		*s = stack[:l]
-		return e
-	}
-	return nil
+	item := s.first.item
+	s.first = s.first.next
+	s.count--
+	return item
 }
 
-// IsEmpty checks if the stack is empty
+// IsEmpty checks if the stack has any items
 func (s *Stack) IsEmpty() bool {
-	return len(*s) == 0
+	return s.count == 0
 }
 
 // Size returns the current size of the stack
 func (s *Stack) Size() int {
-	return len(*s)
+	return s.count
 }

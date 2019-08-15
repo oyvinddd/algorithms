@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	stack "github.com/oyvinddd/algorithms/data-structures/stack"
+	"github.com/oyvinddd/algorithms/data-structures/stack"
 )
 
 func main() {
@@ -14,7 +14,8 @@ func main() {
 	printSlice(a, "INPUT")
 
 	// Run code on slice here
-	s := stack.NewStack()
+	// s := stack.NewStack()
+	stck := stack.Stack{}
 	s.Push("hello")
 	s.Push("world")
 

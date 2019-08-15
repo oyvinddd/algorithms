@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+
+	stack "github.com/oyvinddd/algorithms/data-structures/stack"
 )
 
 func main() {
@@ -12,6 +14,13 @@ func main() {
 	printSlice(a, "INPUT")
 
 	// Run code on slice here
+	s := stack.NewStack()
+	s.Push("hello")
+	s.Push("world")
+
+	for s.Size() > 0 {
+		fmt.Printf("%v (size: %v)\n", *s.Pop(), s.Size())
+	}
 
 	printSlice(a, "OUTPUT")
 }

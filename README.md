@@ -25,4 +25,5 @@ A collection of algorithms and data structures implemented in Go
 
 ### Data Structures
 
-* Priority Queue
+* [Stack](https://github.com/oyvinddd/algorithms/blob/master/data-structures/stack/stack.go "Go to page")
+* Queue

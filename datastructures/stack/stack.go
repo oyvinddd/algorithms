@@ -1,5 +1,5 @@
-// Package datastructures contains various basic data structures
-package datastructures
+// Package stack implements a pushdown LIFO stack using linked-lists
+package stack
 
 // Stack struct
 type Stack struct {

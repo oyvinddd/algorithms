@@ -25,5 +25,5 @@ A collection of algorithms and data structures implemented in Go
 
 ### Data Structures
 
-* [Stack](https://github.com/oyvinddd/algorithms/blob/master/data-structures/stack/stack.go "Go to page")
-* Queue
+* [Stack](https://github.com/oyvinddd/algorithms/blob/master/datastructures/stack/stack.go "Go to page")
+* [Queue](https://github.com/oyvinddd/algorithms/blob/master/datastructures/queue/queue.go "Go to page")

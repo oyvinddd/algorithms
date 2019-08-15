@@ -1,5 +1,5 @@
-// Package stack implements a pushdown stack (linked-list implementation)
-package stack
+// Package datastructures contains various basic data structures
+package datastructures
 
 // Stack struct
 type Stack struct {

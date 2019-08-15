@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/oyvinddd/algorithms/data-structures/stack"
+	stack "github.com/oyvinddd/algorithms/data-structures/stack"
 )
 
 func main() {
@@ -15,13 +15,16 @@ func main() {
 
 	// Run code on slice here
 	// s := stack.NewStack()
-	stck := stack.Stack{}
+	s := stack.Stack{}
 	s.Push("hello")
 	s.Push("world")
+	s.Push("!!!!!")
 
 	for s.Size() > 0 {
 		fmt.Printf("%v (size: %v)\n", *s.Pop(), s.Size())
 	}
+	ss := s.Pop()
+	fmt.Print(ss)
 
 	printSlice(a, "OUTPUT")
 }

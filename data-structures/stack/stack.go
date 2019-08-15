@@ -22,10 +22,13 @@ func (s *Stack) Push(item string) {
 
 // Pop an item from the stack
 func (s *Stack) Pop() *string {
-	item := s.first.item
-	s.first = s.first.next
-	s.count--
-	return item
+	if s.first != nil {
+		item := s.first.item
+		s.first = s.first.next
+		s.count--
+		return item
+	}
+	return nil
 }
 
 // IsEmpty checks if the stack has any items

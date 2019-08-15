@@ -1,11 +1,19 @@
+// Package shellsort implements the Shellsort algorithm
 package shellsort
 
-// Sort - ShellSort
-// based on insertion sort, allows exchanges of elements far apart (insertion sort only exch adjacent entries)
-// produce partially sorted array that can evcentually be sorted by regular insertion sort
-// this algo is most useful when the input array is large in size
-// MUCH faster than insertion sort and selection sort
-// uses no extra space, is great for arbitrary input (not necessarily random)
+/*
+Sort runs shellsort on the input set. Shellsort is based
+on insertion sort, but it allows for exchanges of elements
+further apart (insertion sort only exchange adjacent entries).
+The algorithm produce partially sorted arrays are that can
+eventually be sorted by regular insertion sort. Shellsort is
+most useful when the input set is large in size. Generally
+speaking, it is a much faster faster algorithm than insertion
+sort and selection sort. It uses no extra space, is great for
+arbitrary (not necessarily random) input.
+
+Running time: O(n*log(n))
+*/
 func Sort(a []int) {
 	len := len(a)
 	h := 1
@@ -25,9 +33,7 @@ func Sort(a []int) {
 }
 
 func exch(a []int, ai int, bi int) {
-	temp := a[ai]
-	a[ai] = a[bi]
-	a[bi] = temp
+	a[ai], a[bi] = a[bi], a[ai]
 }
 
 func less(a int, b int) bool {

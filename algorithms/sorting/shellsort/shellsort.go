@@ -12,7 +12,7 @@ speaking, it is a much faster faster algorithm than insertion
 sort and selection sort. It uses no extra space, is great for
 arbitrary (not necessarily random) input.
 
-Running time: O(n*log(n))
+Running time: O(n^(5/3))
 */
 func Sort(a []int) {
 	len := len(a)

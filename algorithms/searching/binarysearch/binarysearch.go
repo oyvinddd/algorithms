@@ -4,8 +4,8 @@ package binarysearch
 /*
 Search does a binary search for an element in a sorted array. If
 the item is found return it, else return -1. Binary search works
-by recursively dividing the array in two, making the "active" part
-2^k times smaller every time.
+by dividing the array in two on each iteration, making the "active"
+part 2^k times smaller every time.
 
 Running time: logarithmic, i.e. O(log(n))
 */

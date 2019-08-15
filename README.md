@@ -18,7 +18,7 @@ A collection of algorithms and data structures implemented in Go
 * [Quicksort](https://github.com/oyvinddd/algorithms/blob/master/algorithms/sorting/quicksort/quicksort.go "Go to page")
 
 #### Searching
-* [Binary search](https://github.com/oyvinddd/algorithms/blob/master/searching/binarysearch.go "Go to page")
+* [Binary search](https://github.com/oyvinddd/algorithms/blob/master/algorithms/searching/binarysearch.go "Go to page")
 
 #### Other
 * [Gale-Shapeley](https://github.com/oyvinddd/algorithms/blob/master/algorithms/other/galeshapeley/galeshapeley.go "Go to page") (WIP)

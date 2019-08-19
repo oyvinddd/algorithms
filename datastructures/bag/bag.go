@@ -7,7 +7,7 @@ type Bag struct {
 }
 
 type node struct {
-	item *string
+	item *interface{}
 	next *node
 }
 
@@ -17,7 +17,7 @@ func NewBag() *Bag {
 }
 
 // Add an item to the bag
-func (b *Bag) Add(item string) {
+func (b *Bag) Add(item interface{}) {
 	oldFirst := b.first
 	b.first = &node{
 		item: &item,
@@ -27,8 +27,8 @@ func (b *Bag) Add(item string) {
 }
 
 // BagIterator returns a channel (to be used as an iterator on the bag content)
-func (b *Bag) BagIterator() <-chan *string {
-	ch := make(chan *string)
+func (b *Bag) BagIterator() <-chan *interface{} {
+	ch := make(chan *interface{})
 	go func() {
 		current := b.first
 		for current != nil {

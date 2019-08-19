@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+
+	b "github.com/oyvinddd/algorithms/datastructures/bag"
 )
 
 func main() {
@@ -12,6 +14,14 @@ func main() {
 	printSlice(a, "INPUT")
 
 	// Run code here
+	bag := b.NewBag()
+	bag.Add(10)
+	bag.Add(2)
+
+	it := bag.BagIterator()
+	for item := range it {
+		fmt.Printf("%v\n", *item)
+	}
 
 	printSlice(a, "OUTPUT")
 }

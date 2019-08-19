@@ -25,6 +25,8 @@ A collection of algorithms and data structures implemented in [Go](https://golan
 
 ### Data Structures
 
+#### Fundamental
+
 * [Stack](https://github.com/oyvinddd/algorithms/blob/master/datastructures/stack/stack.go "Go to page")
 * [Queue](https://github.com/oyvinddd/algorithms/blob/master/datastructures/queue/queue.go "Go to page")
 * [Bag](https://github.com/oyvinddd/algorithms/blob/master/datastructures/bag/bag.go "Go to page")

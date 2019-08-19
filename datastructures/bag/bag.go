@@ -26,8 +26,8 @@ func (b *Bag) Add(item interface{}) {
 	b.count++
 }
 
-// BagIterator returns a channel (to be used as an iterator on the bag content)
-func (b *Bag) BagIterator() <-chan *interface{} {
+// Iterator returns a channel (to be used as an iterator on the bag content)
+func (b *Bag) Iterator() <-chan *interface{} {
 	ch := make(chan *interface{})
 	go func() {
 		current := b.first

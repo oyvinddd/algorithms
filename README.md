@@ -21,7 +21,7 @@ A collection of algorithms and data structures implemented in [Go](https://golan
 * [Binary search](https://github.com/oyvinddd/algorithms/blob/master/algorithms/searching/binarysearch/binarysearch.go "Go to page")
 
 #### Other
-* [Gale-Shapeley](https://github.com/oyvinddd/algorithms/blob/master/algorithms/other/galeshapeley/galeshapeley.go "Go to page") (WIP)
+* [Gale-Shapeley](https://github.com/oyvinddd/algorithms/blob/master/algorithms/other/galeshapeley/galeshapeley.go "Go to page")
 
 ### Data Structures
 

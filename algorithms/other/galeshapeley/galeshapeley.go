@@ -1,82 +1,69 @@
+// Package galeshapeley implements the Gale-Shapeley algorithm
 package galeshapeley
 
-import "fmt"
+import (
+	"fmt"
 
-// Person ...
-type Person struct {
-	Name      string
-	EngagedTo *Person
-	Priority  []*Person
-}
+	"github.com/oyvinddd/algorithms/datastructures/queue"
+)
 
-// GS - Gale-Shapeley algorithm
-func GS(men []Person, women []Person) {
-	engagedCount, counter := 0, 0
-	for engagedCount < len(men) {
-		m := &men[counter]
-		if m.isFree() && len(m.Priority) > 0 {
-			w := m.pop()
-			// w is free, get engaged directly
-			if w.isFree() {
-				engagement(m, w)
-				engagedCount++
+// GaleShapeley runs the Gale-Shapeley algorithm
+func GaleShapeley(men []Person, women []Person) {
+
+	mPrefs := make(map[string]*queue.Queue)
+	wPrefs := make(map[string]map[string]int)
+	wEngag := make(map[string]*Person)
+	freeMen := queue.NewQueue()
+
+	for _, man := range men {
+
+		// Create a queue of all possible women for a man
+		mPrefs[man.Name] = queue.NewQueue()
+		for _, wmn := range man.Pref {
+			q := mPrefs[man.Name]
+			// Add man to list of free men
+			q.Enqueue(wmn)
+		}
+
+		// Add man to list of free men
+		freeMen.Enqueue(man)
+	}
+
+	// Create preference dictionary on how women rank men (O(n^2))
+	for _, wmn := range women {
+		wPrefs[wmn.Name] = make(map[string]int)
+		for idx, man := range wmn.Pref {
+			wPrefs[wmn.Name][man.Name] = idx
+		}
+	}
+
+	// Run algorithm until there are no free men
+	for !freeMen.IsEmpty() {
+
+		m := freeMen.Dequeue().(Person)
+		w := mPrefs[m.Name].Dequeue().(Person)
+
+		// If woman is free (never been proposed to)
+		if wEngag[w.Name] == nil {
+			wEngag[w.Name] = &m
+		} else {
+			m2 := wEngag[w.Name] // m'
+			// if w prefers m to m'
+			if wPrefs[w.Name][m.Name] < wPrefs[w.Name][m2.Name] {
+				freeMen.Enqueue(m2)
+				wEngag[w.Name] = &m
 			} else {
-				if w.prefers(m) {
-					engagement(m, w)
-				}
+				freeMen.Enqueue(&m)
+				wEngag[w.Name] = m2
 			}
 		}
-		counter++
-		// reset counter if it exceeds number of people
-		if counter > len(men)-1 {
-			counter = 0
-		}
 	}
-	printPairs(men)
+	printMatching(women, wEngag)
 }
 
-func (p *Person) pop() *Person {
-	if len(p.Priority) == 0 {
-		return nil
+func printMatching(women []Person, e map[string]*Person) {
+	for _, woman := range women {
+		man := e[woman.Name]
+		fmt.Printf(" WOMAN %v is married to MAN %v\n", woman.Name, man.Name)
 	}
-	person := p.Priority[0]
-	p.Priority = p.Priority[1:]
-	return person
-}
-
-func (p *Person) isFree() bool {
-	return p.EngagedTo == nil
-}
-
-func (p *Person) prefers(p2 *Person) bool {
-	ci, ni := 0, 0
-	for i, person := range p.Priority {
-		// we're comparing strings instead of actual memory addresses since priority
-		// list of men on the women has different addresses than the actual men (they were copied at some point, I guess)
-		// ALSO, this could be optimised by having an NxN matrix with the womens preferences instead of a list on each woman
-		if p.EngagedTo.Name == person.Name {
-			ci = i
-		}
-		if p2.Name == person.Name {
-			ni = i
-		}
-	}
-	return ni < ci
-}
-
-func engagement(m *Person, w *Person) {
-	oldBf := w.EngagedTo
-	if oldBf != nil {
-		oldBf.EngagedTo = nil
-	}
-	m.EngagedTo = w
-	w.EngagedTo = m
-}
-
-func printPairs(people []Person) {
-	fmt.Println("########## RESULTS ##########")
-	for _, person := range people {
-		fmt.Printf("%s is married to %s\n", person.Name, person.EngagedTo.Name)
-	}
-	fmt.Println("#############################")
 }

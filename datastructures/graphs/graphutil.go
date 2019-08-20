@@ -6,6 +6,7 @@ package graphs
 //		4 9
 //		....
 
+// ReadFromFile ...
 func ReadFromFile() {
 
 }

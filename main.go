@@ -3,7 +3,8 @@ package main
 import (
 	"fmt"
 
-	b "github.com/oyvinddd/algorithms/datastructures/bag"
+	"github.com/oyvinddd/algorithms/algorithms/other/galeshapeley"
+	"github.com/oyvinddd/algorithms/datastructures/queue"
 )
 
 func main() {
@@ -14,14 +15,13 @@ func main() {
 	printSlice(a, "INPUT")
 
 	// Run code here
-	bag := b.NewBag()
-	bag.Add(10)
-	bag.Add(2)
+	q := queue.Queue{}
+	q.Enqueue("A")
+	q.Enqueue("B")
+	q.Enqueue("C")
 
-	it := bag.BagIterator()
-	for item := range it {
-		fmt.Printf("%v\n", *item)
-	}
+	m, w := galeshapeley.GetPeople()
+	galeshapeley.GaleShapeley(m, w)
 
 	printSlice(a, "OUTPUT")
 }

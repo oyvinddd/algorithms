@@ -14,6 +14,11 @@ type node struct {
 	next *node
 }
 
+// NewQueue constructor
+func NewQueue() *Queue {
+	return &Queue{}
+}
+
 // Enqueue pushes an item onto the queue
 func (q *Queue) Enqueue(item interface{}) {
 	oldLast := q.last

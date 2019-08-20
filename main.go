@@ -4,7 +4,6 @@ import (
 	"fmt"
 
 	"github.com/oyvinddd/algorithms/algorithms/other/galeshapeley"
-	"github.com/oyvinddd/algorithms/datastructures/queue"
 )
 
 func main() {
@@ -15,11 +14,6 @@ func main() {
 	printSlice(a, "INPUT")
 
 	// Run code here
-	q := queue.Queue{}
-	q.Enqueue("A")
-	q.Enqueue("B")
-	q.Enqueue("C")
-
 	m, w := galeshapeley.GetPeople()
 	galeshapeley.GaleShapeley(m, w)
 

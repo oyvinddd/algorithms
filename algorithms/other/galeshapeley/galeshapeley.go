@@ -21,7 +21,6 @@ func GaleShapeley(men []Person, women []Person) {
 		mPrefs[man.Name] = queue.NewQueue()
 		for _, wmn := range man.Pref {
 			q := mPrefs[man.Name]
-			// Add man to list of free men
 			q.Enqueue(wmn)
 		}
 
@@ -50,20 +49,23 @@ func GaleShapeley(men []Person, women []Person) {
 			m2 := wEngag[w.Name] // m'
 			// if w prefers m to m'
 			if wPrefs[w.Name][m.Name] < wPrefs[w.Name][m2.Name] {
-				freeMen.Enqueue(m2)
+				freeMen.Enqueue(*m2)
 				wEngag[w.Name] = &m
 			} else {
-				freeMen.Enqueue(&m)
+				freeMen.Enqueue(m)
 				wEngag[w.Name] = m2
 			}
 		}
 	}
+
+	// Print matching to the console
+	// TODO: print if there is an instability, if the matching is stable and/or perfect
 	printMatching(women, wEngag)
 }
 
 func printMatching(women []Person, e map[string]*Person) {
 	for _, woman := range women {
 		man := e[woman.Name]
-		fmt.Printf(" WOMAN %v is married to MAN %v\n", woman.Name, man.Name)
+		fmt.Printf("WOMAN %v is married to MAN %v\n", woman.Name, man.Name)
 	}
 }

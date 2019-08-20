@@ -10,15 +10,15 @@ type Queue struct {
 
 // Unexported
 type node struct {
-	item *string
+	item interface{}
 	next *node
 }
 
 // Enqueue pushes an item onto the queue
-func (q *Queue) Enqueue(item string) {
+func (q *Queue) Enqueue(item interface{}) {
 	oldLast := q.last
 	q.last = &node{
-		item: &item,
+		item: item,
 		next: nil,
 	}
 	if q.IsEmpty() {
@@ -30,7 +30,7 @@ func (q *Queue) Enqueue(item string) {
 }
 
 // Dequeue gets the first item in the queue and decrements the size
-func (q *Queue) Dequeue() *string {
+func (q *Queue) Dequeue() interface{} {
 	if q.first != nil {
 		item := q.first.item
 		q.first = q.first.next

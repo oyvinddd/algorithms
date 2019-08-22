@@ -1,4 +1,4 @@
-// Package graphs implements a simple undirected graph datastructure using adjacency lists
+// Package graphs contains an undirected and a directed graph data structure based on an adjacency list
 package graphs
 
 import (
@@ -15,7 +15,7 @@ type Graph struct {
 func NewGraph(v int) *Graph {
 	adj := make([]*bag.Bag, v)
 	for i := 0; i < v; i++ {
-		adj[i] = &bag.Bag{}
+		adj[i] = bag.NewBag()
 	}
 	return &Graph{v: v, e: 0, adj: adj}
 }
@@ -38,6 +38,6 @@ func (g *Graph) NoOfE() int {
 }
 
 // GetAdj returns an iterator over the given bag
-func (g *Graph) GetAdj(v int) <-chan *interface{} {
+func (g *Graph) GetAdj(v int) <-chan interface{} {
 	return g.adj[v].Iterator()
 }

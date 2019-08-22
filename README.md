@@ -34,3 +34,4 @@ A collection of algorithms and data structures implemented in [Go](https://golan
 #### Graphs
 
 * [Undirected Graph](https://github.com/oyvinddd/algorithms/blob/master/datastructures/graphs/graph.go "Go to page")
+* [Directed Graph](https://github.com/oyvinddd/algorithms/blob/master/datastructures/graphs/digraph.go "Go to page")

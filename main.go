@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+
+	graphs "github.com/oyvinddd/algorithms/datastructures/graphs/util"
 )
 
 func main() {
@@ -12,6 +14,7 @@ func main() {
 	printSlice(a, "INPUT")
 
 	// Run code here
+	graphs.ReadFromFile("tinyg.txt")
 
 	printSlice(a, "OUTPUT")
 }

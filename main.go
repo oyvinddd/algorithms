@@ -2,8 +2,6 @@ package main
 
 import (
 	"fmt"
-
-	"github.com/oyvinddd/algorithms/algorithms/other/galeshapeley"
 )
 
 func main() {
@@ -14,8 +12,6 @@ func main() {
 	printSlice(a, "INPUT")
 
 	// Run code here
-	m, w := galeshapeley.GetPeople()
-	galeshapeley.GaleShapeley(m, w)
 
 	printSlice(a, "OUTPUT")
 }

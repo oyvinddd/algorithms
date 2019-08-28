@@ -8,12 +8,17 @@ type Stack struct {
 }
 
 type node struct {
-	item *string
+	item *interface{}
 	next *node
 }
 
+// NewStack constructor
+func NewStack() *Stack {
+	return &Stack{}
+}
+
 // Push an item onto the stack
-func (s *Stack) Push(item string) {
+func (s *Stack) Push(item interface{}) {
 	oldFirst := s.first
 	s.first = &node{item: &item}
 	s.first.next = oldFirst
@@ -21,7 +26,7 @@ func (s *Stack) Push(item string) {
 }
 
 // Pop an item from the stack
-func (s *Stack) Pop() *string {
+func (s *Stack) Pop() *interface{} {
 	if s.first != nil {
 		item := s.first.item
 		s.first = s.first.next

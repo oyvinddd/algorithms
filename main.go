@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 
+	"github.com/oyvinddd/algorithms/algorithms/searching/dfs"
 	graphs "github.com/oyvinddd/algorithms/datastructures/graphs"
-	gutil "github.com/oyvinddd/algorithms/datastructures/graphs/util"
 )
 
 func main() {
@@ -12,7 +12,8 @@ func main() {
 	// The slice we want to sort
 	// a := []int{9, 4, 7, 5, 0, 3, 2, 6, 1, 9, 8}
 	g := graphs.NewTinyGraph()
-	gutil.PrintGraph(g)
+	// gutil.PrintGraph(g)
+	dfs.DFS(g)
 }
 
 func printSlice(s []int, label string) {

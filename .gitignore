@@ -16,3 +16,5 @@ vendor/
 
 # Ignore VS Code folder
 .vscode
+
+.DS_Store

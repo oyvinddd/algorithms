@@ -34,7 +34,7 @@ func (b *Bag) Iterator() <-chan interface{} {
 		for current != nil {
 			item := current.item
 			current = current.next
-			ch <- item
+			ch <- *item
 		}
 		close(ch)
 	}()

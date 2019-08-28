@@ -3,20 +3,16 @@ package main
 import (
 	"fmt"
 
-	graphs "github.com/oyvinddd/algorithms/datastructures/graphs/util"
+	graphs "github.com/oyvinddd/algorithms/datastructures/graphs"
+	gutil "github.com/oyvinddd/algorithms/datastructures/graphs/util"
 )
 
 func main() {
 
 	// The slice we want to sort
-	a := []int{9, 4, 7, 5, 0, 3, 2, 6, 1, 9, 8}
-
-	printSlice(a, "INPUT")
-
-	// Run code here
-	graphs.ReadFromFile("tinyg.txt")
-
-	printSlice(a, "OUTPUT")
+	// a := []int{9, 4, 7, 5, 0, 3, 2, 6, 1, 9, 8}
+	g := graphs.NewTinyGraph()
+	gutil.PrintGraph(g)
 }
 
 func printSlice(s []int, label string) {

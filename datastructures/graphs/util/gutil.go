@@ -47,5 +47,15 @@ func ReadFromFile(graph *graphs.Graph, filename string) {
 	}
 }
 
-// PrintGraph ...
-func PrintGraph() {}
+// PrintGraph prints graph properties to the console
+// TODO: make this accept both graphs and digraphs
+func PrintGraph(g *graphs.Graph) {
+	fmt.Println("#### PRINTING GRAPH... ####")
+	fmt.Printf("No. of e: %v\nNo. of v: %v\n", g.NoOfE(), g.NoOfV())
+	for v := 0; v < g.NoOfV(); v++ {
+		for w := range g.GetAdj(v) {
+			fmt.Printf("(%v, %v)\n", v, w.(int))
+		}
+	}
+	fmt.Println("###########################")
+}

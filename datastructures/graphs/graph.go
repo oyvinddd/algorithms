@@ -39,6 +39,26 @@ func NewTinyGraph() *Graph {
 	return g
 }
 
+// NewTinyGraph2 ...
+func NewTinyGraph2() *Graph {
+	g := NewGraph(13)
+	g.AddEdge(0, 1)
+	g.AddEdge(0, 2)
+	g.AddEdge(1, 2)
+	g.AddEdge(1, 3)
+	g.AddEdge(1, 4)
+	g.AddEdge(2, 4)
+	g.AddEdge(2, 6)
+	g.AddEdge(2, 7)
+	g.AddEdge(3, 4)
+	g.AddEdge(4, 5)
+	g.AddEdge(6, 7)
+	g.AddEdge(8, 9)
+	g.AddEdge(10, 11)
+	g.AddEdge(11, 12)
+	return g
+}
+
 // AddEdge adds a new edge to the graph
 func (g *Graph) AddEdge(v int, w int) {
 	g.adj[v].Add(w) // Add w to v's list

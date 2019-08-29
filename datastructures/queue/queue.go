@@ -10,7 +10,7 @@ type Queue struct {
 
 // Unexported
 type node struct {
-	item interface{}
+	item *interface{}
 	next *node
 }
 
@@ -23,7 +23,7 @@ func NewQueue() *Queue {
 func (q *Queue) Enqueue(item interface{}) {
 	oldLast := q.last
 	q.last = &node{
-		item: item,
+		item: &item,
 		next: nil,
 	}
 	if q.IsEmpty() {
@@ -35,7 +35,7 @@ func (q *Queue) Enqueue(item interface{}) {
 }
 
 // Dequeue gets the first item in the queue and decrements the size
-func (q *Queue) Dequeue() interface{} {
+func (q *Queue) Dequeue() *interface{} {
 	if q.first != nil {
 		item := q.first.item
 		q.first = q.first.next

@@ -7,31 +7,27 @@ import (
 	"github.com/oyvinddd/algorithms/datastructures/queue"
 )
 
+// TODO:
+// implement 'check if digraph is strongly connected'
+//		pp. 98 in algorithm design (do BFS from s in G and from s in GRev. All nodes should be reachable)
+
 // BFS ...
-func BFS(graph *graphs.Graph) {
-	discovered := make([]bool, graph.NoOfV())
-	bfsTree := make([]*queue.Queue, graph.NoOfV())
-	layers := make([]*queue.Queue, graph.NoOfV())
-	layer := 0
-	for i := 0; i < graph.NoOfV(); i++ {
-		discovered[i] = false
-		bfsTree[i] = queue.NewQueue()
-		layers[i] = queue.NewQueue()
-	}
-	discovered[0] = true
-	layers[0].Enqueue(0)
-	for !layers[layer].IsEmpty() {
-		u := (*layers[layer].Dequeue()).(int)
-		fmt.Printf("U: %v\n", u+1)
-		for v := range graph.GetAdj(u) {
-			fmt.Printf("V: %v\n", v.(int)+1)
-			if !discovered[v.(int)] {
-				fmt.Printf("BFS: Exploring %v...\n", v.(int)+1)
-				discovered[v.(int)] = true
-				bfsTree[u].Enqueue(v.(int))
-				layers[layer+1].Enqueue(v.(int))
+func BFS(g *graphs.Graph, s int) {
+	marked := make([]bool, g.NoOfV())
+	edgeTo := make([]int, g.NoOfV())
+	queue := queue.NewQueue()
+	queue.Enqueue(s)
+	marked[s] = true
+	for !queue.IsEmpty() {
+		v := (*queue.Dequeue()).(int)
+		for w := range g.GetAdj(v) {
+			ww := w.(int)
+			if !marked[ww] {
+				fmt.Printf("VISITING EDGE (%v, %v)\n", v, ww)
+				edgeTo[ww] = v
+				marked[ww] = true
+				queue.Enqueue(ww)
 			}
 		}
-		layer++
 	}
 }

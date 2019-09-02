@@ -3,6 +3,7 @@ package graphs
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/oyvinddd/algorithms/datastructures/bag"
 )
@@ -107,4 +108,9 @@ func (g *Graph) Print() {
 		}
 		fmt.Println()
 	}
+}
+
+// Exit with error
+func exitWithError(msg string) {
+	log.Fatal(msg)
 }

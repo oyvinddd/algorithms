@@ -35,9 +35,9 @@ A collection of algorithms and data structures implemented in [Go](https://golan
 
 #### Tree
 
-* [Heap](https://github.com/oyvinddd/algorithms/blob/master/datastructures/heap/heap.go "Go to page")
+* [Priority Queue](https://github.com/oyvinddd/algorithms/blob/master/datastructures/heap/pq.go "Go to page")
 
-#### Graphs
+#### Graph
 
 * [Undirected Graph](https://github.com/oyvinddd/algorithms/blob/master/datastructures/graphs/graph.go "Go to page")
 * [Directed Graph](https://github.com/oyvinddd/algorithms/blob/master/datastructures/graphs/digraph.go "Go to page")

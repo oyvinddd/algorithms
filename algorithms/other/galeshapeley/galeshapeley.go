@@ -39,8 +39,8 @@ func GaleShapeley(men []Person, women []Person) {
 	// Run algorithm until there are no free men
 	for !freeMen.IsEmpty() {
 
-		m := freeMen.Dequeue().(Person)
-		w := mPrefs[m.Name].Dequeue().(Person)
+		m := (*freeMen.Dequeue()).(Person)
+		w := (*mPrefs[m.Name].Dequeue()).(Person)
 
 		// If woman is free (never been proposed to)
 		if wEngag[w.Name] == nil {

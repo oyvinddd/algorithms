@@ -33,6 +33,10 @@ A collection of algorithms and data structures implemented in [Go](https://golan
 * [Queue](https://github.com/oyvinddd/algorithms/blob/master/datastructures/queue/queue.go "Go to page")
 * [Bag](https://github.com/oyvinddd/algorithms/blob/master/datastructures/bag/bag.go "Go to page")
 
+#### Tree
+
+* [Heap](https://github.com/oyvinddd/algorithms/blob/master/datastructures/heap/heap.go "Go to page")
+
 #### Graphs
 
 * [Undirected Graph](https://github.com/oyvinddd/algorithms/blob/master/datastructures/graphs/graph.go "Go to page")

@@ -36,7 +36,7 @@ func (heap *Heap) Delete() {
 
 func (heap *Heap) heapifyUp(i int) { // O(logn)
 	if i > 1 {
-		j := heap.parent(i)
+		//j := heap.parent(i)
 		// pp. 61
 	}
 }

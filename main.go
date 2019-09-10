@@ -3,23 +3,22 @@ package main
 import (
 	"fmt"
 
-	"github.com/oyvinddd/algorithms/algorithms/searching/dfs"
-	"github.com/oyvinddd/algorithms/datastructures/graphs"
+	"github.com/oyvinddd/algorithms/algorithms/greedy"
 )
 
 func main() {
 
-	// The slice we want to sort
-	// a := []int{9, 4, 7, 5, 0, 3, 2, 6, 1, 9, 8}
+	j1 := *greedy.NewJob("J1", 0, 2)
+	j2 := *greedy.NewJob("J2", 3, 4)
+	j3 := *greedy.NewJob("J3", 5, 6)
+	j4 := *greedy.NewJob("J4", 5, 7)
+	j5 := *greedy.NewJob("J5", 6, 11)
 
-	g := graphs.NewGraph(5)
-	g.AddEdge(0, 1)
-	g.AddEdge(1, 2)
-	g.AddEdge(3, 4)
-	g.Print()
+	jobs := []greedy.Job{j1, j2, j3, j4, j5}
 
-	search := dfs.NewDFS()
-	search.DepthFirstSearch(g, 0)
-	connected := search.IsConnected(g)
-	fmt.Printf("Is G connected? Answer: %v\n", connected)
+	optimalJobs := greedy.IntervalScheduling(jobs)
+
+	for _, e := range optimalJobs {
+		fmt.Printf("%v\n", e.Name)
+	}
 }

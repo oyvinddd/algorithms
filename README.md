@@ -23,7 +23,7 @@ A collection of algorithms and data structures implemented in [Go](https://golan
 * [Depth-first search (DFS)](https://github.com/oyvinddd/algorithms/blob/master/algorithms/searching/dfs/dfs.go "Go to page")
 
 #### Greedy
-* * [Interval Scheduling](https://github.com/oyvinddd/algorithms/blob/master/algorithms/greedy/interval.go "Go to page")
+* [Interval Scheduling](https://github.com/oyvinddd/algorithms/blob/master/algorithms/greedy/interval.go "Go to page")
 
 #### Other
 * [Gale-Shapeley](https://github.com/oyvinddd/algorithms/blob/master/algorithms/other/galeshapeley/galeshapeley.go "Go to page")

@@ -47,3 +47,5 @@ A collection of algorithms and data structures implemented in [Go](https://golan
 
 * [Undirected Graph](https://github.com/oyvinddd/algorithms/blob/master/datastructures/graphs/graph.go "Go to page")
 * [Directed Graph](https://github.com/oyvinddd/algorithms/blob/master/datastructures/graphs/digraph.go "Go to page")
+* [Edge-Weighted Graph](https://github.com/oyvinddd/algorithms/blob/master/datastructures/graphs/edgeweighted.go "Go to page")
+<!-- * [Edge-Weighted Graph](https://github.com/oyvinddd/algorithms/blob/master/datastructures/graphs/edgeweighted.go "Go to page") -->

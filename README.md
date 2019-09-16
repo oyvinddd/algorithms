@@ -24,6 +24,9 @@ A collection of algorithms and data structures implemented in [Go](https://golan
 
 #### Greedy
 * [Interval Scheduling](https://github.com/oyvinddd/algorithms/blob/master/algorithms/greedy/interval.go "Go to page")
+* Dijkstra's Algorithm
+* Kruskal's Algorithm
+* Prim's Algorithm
 
 #### Other
 * [Gale-Shapeley](https://github.com/oyvinddd/algorithms/blob/master/algorithms/other/galeshapeley/galeshapeley.go "Go to page")

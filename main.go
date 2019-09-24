@@ -11,4 +11,5 @@ func main() {
 	g.AddEdge(*graphs.NewEdge(3, 0, 9))
 
 	g.Print()
+
 }

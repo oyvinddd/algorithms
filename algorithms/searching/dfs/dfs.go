@@ -46,3 +46,22 @@ func (search *DFS) dfs(g *graphs.Graph, v int) {
 		}
 	}
 }
+
+// TopsortDFS ...
+func TopsortDFS(g graphs.Digraph) []int {
+	n := g.NoOfV()
+	v := make([]bool, n)
+	ord := make([]int, n)
+	i := n - 1 // index of ordering array
+	for at := 0; at < n; at++ {
+		if !v[at] {
+			visited := make([]int, 0)
+			// run dfs(at, v, visited, g) where visited is passed by reference
+			for nodeID := range visited {
+				ord[i] = nodeID
+				i = i - 1
+			}
+		}
+	}
+	return ord
+}

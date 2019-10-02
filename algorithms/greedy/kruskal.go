@@ -2,6 +2,7 @@ package greedy
 
 import (
 	"fmt"
+	"sort"
 
 	graphs "github.com/oyvinddd/algorithms/datastructures/graphs/edgeweighted"
 )
@@ -19,6 +20,8 @@ func KruskalMST(ewg graphs.EWGraph) []graphs.Edge {
 }
 
 // EdgeSort sorts edges in the graph from lightest to heaviest weight
+// To keep it simple, consider the running time of this to be O(nlogn)
 func EdgeSort(ewg graphs.EWGraph) []graphs.Edge {
+	sort.Slice()
 	return make([]graphs.Edge, 0)
 }

@@ -46,6 +46,15 @@ func (ewg EWGraph) GetAdj(v int) <-chan interface{} {
 	return ewg.adj[v].Iterator()
 }
 
+func (ewg EWGraph) GetEdges() {
+
+	for i := 0; i < ewg.NoOfV(); i++ {
+		for j := range ewg.GetAdj(i) {
+			fmt.Printf("%v", j)
+		}
+	}
+}
+
 // Print graph details to the console
 func (ewg EWGraph) Print() {
 	fmt.Printf("%v vertices, %v edges\n", ewg.NoOfV(), ewg.NoOfE())

@@ -1,22 +1,27 @@
 package main
 
-import graphs "github.com/oyvinddd/algorithms/datastructures/graphs/edgeweighted"
+import (
+	"fmt"
+
+	"github.com/oyvinddd/algorithms/algorithms/greedy"
+)
+
+// TODOs:
+// 0. get ew graph to return a set of edges
+// 1. implement union-find
+// 2. implement kruskal (using UF)
+// 3. implement prim
+// 4. implement dijkstra
 
 func main() {
 
-	g := graphs.NewEWGraph(4)
-	g.AddEdge(*graphs.NewEdge(0, 1, 2))
-	g.AddEdge(*graphs.NewEdge(1, 2, 1))
-	g.AddEdge(*graphs.NewEdge(2, 3, 6))
-	g.AddEdge(*graphs.NewEdge(3, 0, 9))
+	j1 := *greedy.NewJob("Job #1", 1, 5)
+	j2 := *greedy.NewJob("Job #2", 2, 4)
+	j3 := *greedy.NewJob("Job #3", 4, 6)
+	j4 := *greedy.NewJob("Job #4", 6, 7)
 
-	// g.Print()
-	g.GetEdges()
+	jobs := []greedy.Job{j1, j2, j3, j4}
 
-	// TODOs:
-	// 0. get ew graph to return a set of edges
-	// 1. implement union-find
-	// 2. implement kruskal (using UF)
-	// 3. implement prim
-	// 4. implement dijkstra
+	comp := greedy.IntervalScheduling(jobs)
+	fmt.Printf("%v", comp)
 }

@@ -28,6 +28,9 @@ A collection of algorithms and data structures implemented in [Go](https://golan
 * Kruskal's Algorithm
 * Prim's Algorithm
 
+#### Dynamic Programming (DP)
+* [Fibonacci Sequence](https://github.com/oyvinddd/algorithms/blob/master/algorithms/dp/fibonacci/fibonacci.go "Go to page")
+
 #### Other
 * [Gale-Shapeley](https://github.com/oyvinddd/algorithms/blob/master/algorithms/other/galeshapeley/galeshapeley.go "Go to page")
 

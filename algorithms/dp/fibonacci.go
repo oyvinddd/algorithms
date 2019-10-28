@@ -27,12 +27,9 @@ func fo(n int, m []int) int {
 	if m[n] > 0 {
 		return m[n]
 	}
-	var res int
 	if n == 1 || n == 2 {
-		res = 1
-	} else {
-		res = fo(n-1, m) + fo(n-2, m)
-		m[n] = res
+		return 1
 	}
-	return res
+	m[n] = fo(n-1, m) + fo(n-2, m)
+	return m[n]
 }

@@ -18,9 +18,9 @@ A collection of algorithms and data structures implemented in [Go](https://golan
 * [Quicksort](https://github.com/oyvinddd/algorithms/blob/master/algorithms/sorting/quicksort/quicksort.go "Go to page")
 
 #### Searching
-* [Binary search](https://github.com/oyvinddd/algorithms/blob/master/algorithms/searching/binarysearch/binarysearch.go "Go to page")
-* [Breadth-first search (BFS)](https://github.com/oyvinddd/algorithms/blob/master/algorithms/searching/bfs/bfs.go "Go to page")
-* [Depth-first search (DFS)](https://github.com/oyvinddd/algorithms/blob/master/algorithms/searching/dfs/dfs.go "Go to page")
+* [Binary search - O(logn)](https://github.com/oyvinddd/algorithms/blob/master/algorithms/searching/binarysearch/binarysearch.go "Go to page")
+* [Breadth-first search (BFS) - O(e+v)](https://github.com/oyvinddd/algorithms/blob/master/algorithms/searching/bfs/bfs.go "Go to page")
+* [Depth-first search (DFS)](https://github.com/oyvinddd/algorithms/blob/master/algorithms/searching/dfs/dfs.go "Go to page") • O(e+v)
 
 #### Greedy
 * [Interval Scheduling](https://github.com/oyvinddd/algorithms/blob/master/algorithms/greedy/interval.go "Go to page")
@@ -29,7 +29,8 @@ A collection of algorithms and data structures implemented in [Go](https://golan
 * Prim's Algorithm
 
 #### Dynamic Programming (DP)
-* [Fibonacci Sequence](https://github.com/oyvinddd/algorithms/blob/master/algorithms/dp/fibonacci.go "Go to page")
+* [Fibonacci Sequence - O(n^2)](https://github.com/oyvinddd/algorithms/blob/master/algorithms/dp/fibonacci.go "Go to page")
+* [Knapsack Problem - O(nc](https://github.com/oyvinddd/algorithms/blob/master/algorithms/dp/knapsack.go "Go to page")
 
 #### Other
 * [Gale-Shapeley](https://github.com/oyvinddd/algorithms/blob/master/algorithms/other/galeshapeley/galeshapeley.go "Go to page")

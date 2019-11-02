@@ -1,5 +1,6 @@
 package dp
 
+// WIP
 func SequenceAlignment(x string, y string) int {
 	d, g := 1, 2 // mismtach and gap penalties
 	m, n := len(x), len(y)

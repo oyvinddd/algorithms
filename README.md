@@ -30,6 +30,7 @@ A collection of algorithms and data structures implemented in [Go](https://golan
 
 #### Dynamic Programming (DP)
 * [Fibonacci Sequence](https://github.com/oyvinddd/algorithms/blob/master/algorithms/dp/fibonacci.go "Go to page") - O(n)
+* [Subset Sum Problem](https://github.com/oyvinddd/algorithms/blob/master/algorithms/dp/susetsum.go "Go to page") - O(n)
 * [Knapsack Problem](https://github.com/oyvinddd/algorithms/blob/master/algorithms/dp/knapsack.go "Go to page") - O(n)
 
 #### Other

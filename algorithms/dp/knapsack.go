@@ -6,6 +6,9 @@ type Item struct {
 	value  int
 }
 
+var mem [][]int
+var result int = 0
+
 // NewItem convenience constructor for item struct
 func NewItem(w int, v int) *Item {
 	return &Item{weight: w, value: v}
@@ -14,21 +17,19 @@ func NewItem(w int, v int) *Item {
 // KnapsackOpt runs the optimal knapsack algorithm
 func KnapsackOpt(items []Item, cap int) int {
 	// Create and initialize matrix with -1 values
-	mem := matrix(len(items)+1, cap+1)
+	mem = matrix(len(items)+1, cap+1)
 	for rows := range mem {
 		for cols := range mem[rows] {
 			mem[rows][cols] = -1
 		}
 	}
-	return ksOpt(items, mem, len(items)-1, cap)
+	return ksOpt(items, len(items)-1, cap)
 }
 
 // Knapsack runs the knapsack recursive algorithm
 func Knapsack(items []Item, cap int) int {
-	return ks(items, len(items)-1, cap)
+	return ks(items, len(items), cap)
 }
-
-var result int = 0
 
 /*
 A memoized recursive algorithm for the knapsack problem where
@@ -37,17 +38,17 @@ values for all of our subproblems.
 
 Running time: O(n*c)
 */
-func ksOpt(items []Item, mem [][]int, n int, c int) int {
+func ksOpt(items []Item, n int, c int) int {
 	if mem[n][c] > -1 {
 		return mem[n][c]
 	}
 	if n == 0 || c == 0 {
 		result = 0
 	} else if items[n].weight > c {
-		result = ks(items, n-1, c)
+		result = ksOpt(items, n-1, c)
 	} else {
-		tmp1 := ks(items, n-1, c)
-		tmp2 := items[n].value + ks(items, n-1, c-items[n].weight)
+		tmp1 := ksOpt(items, n-1, c)
+		tmp2 := items[n].value + ksOpt(items, n-1, c-items[n].weight)
 		result = max(tmp1, tmp2)
 	}
 	mem[n][c] = result
@@ -60,15 +61,14 @@ Running time: O(2^n)
 */
 func ks(items []Item, n int, c int) int {
 	if n == 0 || c == 0 {
-		result = 0
-	} else if items[n].weight > c {
-		result = ks(items, n-1, c)
-	} else {
-		tmp1 := ks(items, n-1, c)
-		tmp2 := items[n].value + ks(items, n-1, c-items[n].weight)
-		result = max(tmp1, tmp2)
+		return 0
 	}
-	return result
+	if items[n-1].weight > c {
+		return ks(items, n-1, c)
+	}
+	tmp1 := ks(items, n-1, c)
+	tmp2 := items[n-1].value + ks(items, n-1, c-items[n].weight)
+	return max(tmp1, tmp2)
 }
 
 // max - helper function

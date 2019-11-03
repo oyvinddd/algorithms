@@ -16,13 +16,13 @@ the algorithm to work properly.
 
 Running time: O(n)
 */
-func WeightedIntervalScheduling(m []Job, i int) int {
+func WeightedIntervalScheduling(m []Job) int {
 	a := make([]int, len(m))
 	// initialize opt array with negative values
 	for i := 0; i < len(a); i++ {
 		a[i] = -1
 	}
-	return wis(m, a, i)
+	return wis(m, a, 1) // TODO: start from n?
 }
 
 func wis(m []Job, a []int, i int) int {

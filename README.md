@@ -33,6 +33,7 @@ A collection of algorithms and data structures implemented in [Go](https://golan
 * [Kadane's Algorithm](https://github.com/oyvinddd/algorithms/blob/master/algorithms/dp/kadane.go "Go to page") - O(n)
 * [Weighted Interval Scheduling](https://github.com/oyvinddd/algorithms/blob/master/algorithms/dp/weightedinterval.go "Go to page") - O(n)
 * [Knapsack Problem](https://github.com/oyvinddd/algorithms/blob/master/algorithms/dp/knapsack.go "Go to page") - O(nW)
+* [Longest Common Substring](https://github.com/oyvinddd/algorithms/blob/master/algorithms/dp/lcsubstring.go "Go to page") - O(nm)
 
 #### Other
 * [Gale-Shapeley](https://github.com/oyvinddd/algorithms/blob/master/algorithms/other/galeshapeley/galeshapeley.go "Go to page")

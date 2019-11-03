@@ -14,6 +14,7 @@ import (
 // 4. implement dijkstra
 
 func main() {
-	lcs := dp.LongestCommonSubstring("ABC", "BABA")
+	lcs, n := dp.LongestCommonSubstring("A", "BABA")
 	fmt.Println(lcs)
+	fmt.Println(n)
 }

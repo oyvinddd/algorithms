@@ -1,7 +1,7 @@
 package dp
 
 // LongestCommonSubstring ...
-func LongestCommonSubstring(a string, b string) string {
+func LongestCommonSubstring(a string, b string) (string, int) {
 	la, lb, maxLen, endIdx := len(a), len(b), 0, len(a)
 	m := matrix(la+1, lb+1)
 	for i := 1; i <= la; i++ {
@@ -15,5 +15,5 @@ func LongestCommonSubstring(a string, b string) string {
 			}
 		}
 	}
-	return a[endIdx-maxLen : endIdx]
+	return a[endIdx-maxLen : endIdx], maxLen
 }

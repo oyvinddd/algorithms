@@ -14,7 +14,8 @@ import (
 // 4. implement dijkstra
 
 func main() {
-	a := []int{5, 15, -30, 10, -5, 40, 10}
-	e := dp.Kadane(a)
-	fmt.Printf("%v", e)
+	a := "bd"
+	b := "abcd"
+	num := dp.LCS(a, b, 0, 0)
+	fmt.Println(num)
 }

@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/oyvinddd/algorithms/algorithms/dp"
+	"github.com/oyvinddd/algorithms/algorithms/dac"
 )
 
 // TODOs:
@@ -14,7 +14,9 @@ import (
 // 4. implement dijkstra
 
 func main() {
-	lcs, n := dp.LongestCommonSubstring("A", "BABA")
-	fmt.Println(lcs)
-	fmt.Println(n)
+	a := []int{1, 4, 6}
+	b := []int{2, 3, 7}
+	m, c := dac.MergeAndCount(a, b)
+	fmt.Println(m)
+	fmt.Println(c)
 }

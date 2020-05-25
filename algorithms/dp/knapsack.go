@@ -1,5 +1,7 @@
 package dp
 
+import "fmt"
+
 // Item struct - the items we're going to put in our knapsack
 type Item struct {
 	weight int
@@ -8,6 +10,20 @@ type Item struct {
 
 var mem [][]int
 var result int = 0
+
+func KS(items []Item, w int) int {
+	n := len(items)
+	m := matrix(n+1, w+1)
+	for i := 1; i <= n; i++ {
+		for j := 0; j <= w; j++ {
+			m[j][i] = max(m[j-1][i], m[j-1][i-items[j].weight]+items[j-1].value)
+		}
+	}
+	for _, e := range m {
+		fmt.Println(e)
+	}
+	return m[n][w]
+}
 
 // NewItem convenience constructor for item struct
 func NewItem(w int, v int) *Item {
@@ -36,7 +52,7 @@ A memoized recursive algorithm for the knapsack problem where
 we use a two-dimensional (n*c) array to store already computed
 values for all of our subproblems.
 
-Running time: O(n*c)
+Running time: O(nc)
 */
 func ksOpt(items []Item, n int, c int) int {
 	if mem[n][c] > -1 {

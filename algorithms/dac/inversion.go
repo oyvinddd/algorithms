@@ -1,24 +1,17 @@
 package dac
 
-// MergeAndCount counts the number of inversions between two
-// lists and returns the sorted result
-func MergeAndCount(a []int, b []int) (int, []int) { //WIP:
-	pa, pb, pc, cnt := 0, 0, 0, 0
-	lena, lenb := len(a), len(b)
-	out := make([]int, lena+lenb)
-	for pa < lena && pb < lenb {
-		elema, elemb := a[pa], b[pb]
-		if elema <= elemb {
-			out[pc] = elema
+func MergeAndCount(a []int, b []int) ([]int, int) {
+	m := make([]int, len(a)+len(b))
+	c, pa, pb := 0, 0, 0
+	for c < len(m) {
+		if pa < len(a) && a[pa] < b[pb] {
+			m[c] = a[pa]
 			pa++
-		} else {
-			out[pc] = elemb
+		} else if pb < len(b) {
+			m[c] = b[pb]
 			pb++
 		}
-		if elemb < elema && pa < lena-1 {
-			cnt++
-		}
-		pc++
+		c++
 	}
-	return cnt, out
+	return m, 0
 }
